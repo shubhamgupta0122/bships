@@ -79,28 +79,28 @@ class Grid
     return false
   end
 
-  def inspect
-    puts @grid.map(&:to_s)
-  end
+  # def inspect
+  #   puts @grid.map(&:to_s)
+  # end
 
   def cell_empty?(x,y)
     raise InvalidCoordinates unless self.class.valid_coordinate?(x,y)
     @grid[x][y] == CELL[:empty]
   end
 
-  def surrounding_cell_coordinates(x,y)
-    points = [
-      [x-1, y-1], [x  , y-1], [x+1, y-1],
-      [x-1, y  ],           , [x+1, y  ],
-      [x-1, y+1], [x  , y+1], [x+1, y+1]
-    ]
+  # def surrounding_cell_coordinates(x,y)
+  #   points = [
+  #     [x-1, y-1], [x  , y-1], [x+1, y-1],
+  #     [x-1, y  ],           , [x+1, y  ],
+  #     [x-1, y+1], [x  , y+1], [x+1, y+1]
+  #   ]
 
-    points.map do |x,y|
-      cell_empty?(x,y)
-    end
+  #   points.map do |x,y|
+  #     cell_empty?(x,y)
+  #   end
 
-    return points
-  end
+  #   return points
+  # end
 
   def print_grid
     ROWS.size.times do |i|
