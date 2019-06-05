@@ -20,11 +20,11 @@ class Grid
   end
 
   # def placed_ships
-  #   @ships.select(&:placed?)
+  #   @ships.select(&:placed)
   # end
 
   def available_ships
-    @ships.reject(&:placed?)
+    @ships.reject(&:placed)
   end
 
   def self.get_all_ships

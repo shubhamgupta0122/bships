@@ -33,7 +33,7 @@ class Ship
     'Cruiser'    => 3
   }
 
-  attr_reader :type, :size, :body
+  attr_reader :type, :size, :body, :placed
 
   def initialize(type)
     check_if_can_initialize(type)
@@ -41,6 +41,7 @@ class Ship
     @size = SIZES[@type]
     @body = []
     @size.times{ @body << BODY[:normal] }
+    @placed = false
   end
 
   def place_on_grid(grid, point)
