@@ -11,7 +11,7 @@ class Grid
     ROWS.size.times do |i|
       # @grid[i] = Array.new(COLS.size, CELL[:empty])
       @grid[i] = []
-      COLS.size.items do |j|
+      COLS.size.times do |j|
         @grid[i][j] = CELL[:empty]
       end
     end
