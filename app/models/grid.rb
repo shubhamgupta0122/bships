@@ -148,7 +148,11 @@ class Grid
   end
 
   def self.parse_human_point(point)
-
+    raise Exceptions::PointInvalid if point.match(/([a-jA-J][0-9])/).nil?
+    x = ROWS.index point.first
+    y = COLS.index point.last
+    raise Exceptions::PointOutOfBounds unless valid_coordinate?(x,y)
+    return x, y
   end
 
 end
