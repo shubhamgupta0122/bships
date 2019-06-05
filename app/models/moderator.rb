@@ -45,7 +45,6 @@ class Moderator
   end
 
   def print_grid
-    system('clear')
     @grid.print_on_screen
   end
 
@@ -75,7 +74,8 @@ class Moderator
 
   def self.war_bad_input(player_input)
     puts "Bad Input : #{player_input}"
-    puts "Choose any valid grid point : [#{Grid::ROWS.first}-#{Grid::ROWS.last}][#{Grid::COLS.first}-#{Grid::COLS.last}]"
+    print "Choose any valid grid point : "
+    puts "[#{Grid::ROWS.first}-#{Grid::ROWS.last}][#{Grid::COLS.first}-#{Grid::COLS.last}]"
   end
 
   def self.print_you_won
