@@ -52,6 +52,8 @@ class Grid
         grid[ship.x + i][ship.y] = CELL[:has_ship]
       end
     end
+    print_on_screen
+    puts "Placed #{ship} at #{point} #{orientation}"
   end
 
   def check_if_can_place_ship?(ship, point, orientation)
@@ -102,7 +104,8 @@ class Grid
   #   return points
   # end
 
-  def print_grid
+  def print_on_screen
+    system('clear')
     ROWS.size.times do |i|
       print '+'
       COLS.size.times do
@@ -110,8 +113,7 @@ class Grid
       end
       print "\n|"
       COLS.size.times do |j|
-        byebug if @b == 1
-        cell = print_cell(@grid[i][j])
+        cell = self.class.print_cell(@grid[i][j])
         print " #{cell} |"
       end
       print "\n"
@@ -124,7 +126,7 @@ class Grid
     print "\n"
   end
 
-  def print_cell(cell)
+  def self.print_cell(cell)
     case cell
     when CELL[:empty]
       ' '
